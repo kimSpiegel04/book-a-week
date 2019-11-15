@@ -1,0 +1,22 @@
+{
+  "name": "book-a-week",
+  "version": "1.0.0",
+  "description": "web application that allows me to track my to-be-read list",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimSpiegel04/book-a-week.git"
+  },
+  "author": "kspiegel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimSpiegel04/book-a-week/issues"
+  },
+  "homepage": "https://github.com/kimSpiegel04/book-a-week#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
