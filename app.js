@@ -19,6 +19,17 @@ app.get('/', function(req,res){
     res.render('landing');
 });
 
+// get all books from db
+app.get('/books', function(req, res){
+    Book.find({}, function(err, allBooks){
+        if(err){
+            console.log(err);
+        } else {
+            res.render('books/index', {books: allBooks});
+        }
+    });
+});
+
 
 app.listen(port, function(){
     console.log('Read away on port ' + port + '!');
