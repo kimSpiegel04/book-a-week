@@ -65,14 +65,14 @@ function seedDB(){
         if(err){
             console.log(err);
         }
-        console.log('removed books!');
+        // console.log('removed books!');
         //add some books
         data.forEach(function(seed){
             Book.create(seed, function(err, book){
                 if(err){
                     console.log(err);
                 } else {
-                    console.log('added a book');
+                    // console.log('added a book');
                 }
             })
         })
