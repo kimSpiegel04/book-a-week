@@ -4,12 +4,24 @@
     <a class="btn" href="/books/new/">Add a book</a>
 </p>
 
-<section>
-    <ul>
+<table style="width: 100%">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Progress</th>
+            <th>Finished</th>
+        </tr>
+
         <% books.forEach(function(book) { %>
-            <li><%=book.title%> by <%=book.author%></li>
+            <tr>
+                <td><%=book.title%></td>
+                <td><%=book.author%></td>
+            </tr>
         <% }); %>
-    </ul>
-</section>
+
+</table>  
 
 <%- include ../partials/footer -%>
+
+
+
