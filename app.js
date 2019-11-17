@@ -30,7 +30,27 @@ app.get('/books', function(req, res){
     });
 });
 
+// new book form
+app.get('/books/new', function(req, res){
+    res.render('books/new');
+});
 
+// add new book
+app.post('/books', function(req,res){
+    var title = req.body.title;
+    var author = req.body.author;
+    var newBook = {title: title, author: author};
+
+    Book.create(newBook, function(err, newCreate){
+        if(err){
+            console.log(err);
+        } else {
+            res.redirect('/books');
+        }
+    });
+});
+
+// port served up on...
 app.listen(port, function(){
     console.log('Read away on port ' + port + '!');
 });

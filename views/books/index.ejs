@@ -1,12 +1,15 @@
 <%- include ../partials/header -%>
 
-    <section>
-        <ul>
-            <% books.forEach(function(book) { %>
-                <li><%=book.title%> by <%=book.author%></li>
-            <% }); %>
-        </ul>
+<p>
+    <a class="btn" href="/books/new/">Add a book</a>
+</p>
 
-    </section>
+<section>
+    <ul>
+        <% books.forEach(function(book) { %>
+            <li><%=book.title%> by <%=book.author%></li>
+        <% }); %>
+    </ul>
+</section>
 
 <%- include ../partials/footer -%>
