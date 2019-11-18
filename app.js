@@ -4,6 +4,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     Book = require('./models/books'),
+    Note = require('./models/notes'),
     seedDB = require('./seeds');
 
 var port = process.env.PORT || 3000;
@@ -18,6 +19,8 @@ app.use(express.static(__dirname+'/public'));
 app.get('/', function(req,res){
     res.render('landing');
 });
+
+//////// * BOOKS //////////
 
 // get all books from db
 app.get('/books', function(req, res){
@@ -41,7 +44,7 @@ app.post('/books', function(req,res){
     var author = req.body.author;
     var newBook = {title: title, author: author};
 
-    Book.create(newBook, function(err, newCreate){
+    Book.create(newBook, function(err, createdBook){
         if(err){
             console.log(err);
         } else {
@@ -49,6 +52,11 @@ app.post('/books', function(req,res){
         }
     });
 });
+
+//////// * NOTES //////////
+
+// get notes
+
 
 // port served up on...
 app.listen(port, function(){
