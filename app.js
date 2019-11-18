@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/book_a_week', { useUnifiedTopology: true, 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'));
-// seedDB();
+seedDB();
 
 // landing page
 app.get('/', function(req,res){
@@ -51,6 +51,20 @@ app.post('/books', function(req,res){
             res.redirect('/books');
         }
     });
+});
+
+// show individual book
+app.get('/books/:id', function(req, res){
+    Book.findById(req.params.id)
+        // .populate('notes')
+        .exec(function(err, foundBook){
+            if(err){
+                console.log(err);
+            } else {
+                console.log(foundBook);
+                res.render('books/show', {book: foundBook});
+            }
+        });
 });
 
 //////// * NOTES //////////

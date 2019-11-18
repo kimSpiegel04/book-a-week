@@ -10,12 +10,20 @@
             <th>Author</th>
             <th>Progress</th>
             <th>Finished</th>
+            <th>Edit/Delete</th>
         </tr>
 
         <% books.forEach(function(book) { %>
+        <% var progressBar = (book.pagesProgress/book.totalPages)*100 %>
             <tr>
                 <td><%=book.title%></td>
                 <td><%=book.author%></td>
+                <td><%=progressBar%>%</td>
+                <td></td>
+                <td>
+                        <a href='/books/<%= book._id %>' class="btn btn-success">Edit</a>
+                        <a href='/books/<%= book._id %>' class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         <% }); %>
 

@@ -4,7 +4,7 @@ var bookSchema = new mongoose.Schema({
     title: String,
     author: String,
     totalPages: Number,
-    inProcess: Number,
+    pagesProgress: Number, //this will be current page
     dateFinished: {
         type: Date,
         default: null
