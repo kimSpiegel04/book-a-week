@@ -7,8 +7,10 @@
 
 <div class="progress">
     <div class="progress-bar" role="progressbar" style="width: <%= progressBar %>%;" aria-valuenow="<%= progressBar %>" aria-valuemin="0" aria-valuemax="100"><%= progressBar %>%</div>
-    </div>
+</div>
 
-<p><%= book.pagesProgress %> out of <%= book.totalPages %> pages read so far</p>
+<p><span contenteditable="true"><%= book.pagesProgress %></span> out of <%= book.totalPages %> pages read so far</p>
+
+<button class="btn btn-success">Update</button> //not functional
 
 <%- include ../partials/footer -%>

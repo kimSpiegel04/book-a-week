@@ -14,7 +14,7 @@
         </tr>
 
         <% books.forEach(function(book) { %>
-        <% var progressBar = (book.pagesProgress/book.totalPages)*100 %>
+        <% var progressBar = Math.round((book.pagesProgress/book.totalPages)*100) %>
             <tr>
                 <td><%=book.title%></td>
                 <td><%=book.author%></td>

@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/book_a_week', { useUnifiedTopology: true, 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+'/public'));
-seedDB();
+// seedDB();
 
 // landing page
 app.get('/', function(req,res){
@@ -42,7 +42,8 @@ app.get('/books/new', function(req, res){
 app.post('/books', function(req,res){
     var title = req.body.title;
     var author = req.body.author;
-    var newBook = {title: title, author: author};
+    var totalPages = req.body.totalPages;
+    var newBook = {title: title, author: author, totalPages: totalPages};
 
     Book.create(newBook, function(err, createdBook){
         if(err){
